@@ -1,6 +1,6 @@
-# miniproject - czego dotyczy lista 
+# NeRF: Neural Radiance Fields
 
-Celem dzisiejszych zajęć jest ... np poznanie XYZ modelu, zrozumienie ....
+Celem dzisiejszych zajęć jest poznawanie modelu NeRF oraz zrozumienie jego działania. Oprócz tego zaprezentowane zostaną techniki pozwalające na przyspieszenie działania modelu oraz zwiększenie jego jakości. Cała część teoretyczna znajduję się w notebooku [NeRF.ipynb](NeRF.ipynb). Zadania praktyczne znajdują się w notebooku [exercises.ipynb](exercises.ipynb).
 
 Repozytorium zawiera pliki:
 - plik1.ipynb -- opis modelu XYZ, dwa zadania dotyczące... (jakie/na jakich zbiorach)...
