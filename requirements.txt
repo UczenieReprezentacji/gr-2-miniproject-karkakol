@@ -4,3 +4,4 @@ jupyter==1.0.0
 matplotlib==3.8.0
 python==3.11.5
 imageio==2.31.4
+onnxruntime
