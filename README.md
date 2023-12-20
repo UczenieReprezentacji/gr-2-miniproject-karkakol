@@ -4,11 +4,11 @@ Celem dzisiejszych zajęć jest poznawanie modelu NeRF oraz zrozumienie jego dzi
 
 Repozytorium zawiera pliki:
 - NeRF.ipynb -- zawiera on część teoretyczną wyjaśniającą jak działa NeRF oraz Furier Feature
-- fourier_feature_example.ipynb -- w celu pokazania jak działa Furier Feature
-- exercises.py -- plik z praktycznymi zadaniami do zrobienia
+- fourier_feature_example.ipynb -- plik pokazujący jak Furier Feature poprawia działanie sieci
+- exercises.ipynb -- plik z praktycznymi zadaniami do zrobienia
 - nerf_eval -- folder z kodem do uruchomienia NeRF wzięty z repozytorium [ailia-models [6]](https://github.com/axinc-ai/ailia-models/tree/master/neural_rendering/nerf)
 - requirements.txt -- zestaw potrzebnych bibliotek do uruchomienia kodu.
-- elza -- zbiór zdjęć elzy potrzebny do notebooka exercises
+- elza -- zbiór zdjęć Elzy potrzebny do notebooka exercises
 - src -- zbiór materiałów audiowizualnych do notebooka NeRF
 
 ## Konfiguracja środowiska
