@@ -64,5 +64,5 @@ Repozytorium zostało stworzone na podstawie:<br/>
 [3] https://towardsdatascience.com/nerf-representing-scenes-as-neural-radiance-fields-for-view-synthesis-ef1e8cebace4 (20.12.2023) <br/>
 [4] https://bmild.github.io/fourfeat/ (20.12.2023) <br/>
 [5] https://arxiv.org/pdf/2003.08934.pdf (20.12.2023) <br/>
-[6] https://github.com/axinc-ai/ailia-models/tree/master/neural_rendering/nerf <br/>
-[7] https://github.com/ndahlquist/pytorch-fourier-feature-networks/blob/master/demo.ipynb
+[6] https://github.com/axinc-ai/ailia-models/tree/master/neural_rendering/nerf (20.12.2023) <br/>
+[7] https://github.com/ndahlquist/pytorch-fourier-feature-networks/blob/master/demo.ipynb (20.12.2023)
