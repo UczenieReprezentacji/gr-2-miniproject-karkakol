@@ -1,0 +1,450 @@
+ir_version: 8
+producer_name: "tf2onnx+onnx_optimizer"
+producer_version: "1.9.3+0.10"
+model_version: 0
+graph {
+  name: "tf2onnx"
+  node {
+    input: "input_1"
+    input: "split__6"
+    output: "StatefulPartitionedCall/StatefulPartitionedCall/tf_op_layer_split/PartitionedCall/split:0"
+    output: "StatefulPartitionedCall/StatefulPartitionedCall/tf_op_layer_split/PartitionedCall/split:1"
+    name: "StatefulPartitionedCall/StatefulPartitionedCall/tf_op_layer_split/PartitionedCall/split"
+    op_type: "Split"
+    attribute {
+      name: "axis"
+      i: -1
+      type: INT
+    }
+  }
+  node {
+    input: "StatefulPartitionedCall/StatefulPartitionedCall/tf_op_layer_split/PartitionedCall/split:0"
+    input: "StatefulPartitionedCall/StatefulPartitionedCall/dense/StatefulPartitionedCall/MatMul/ReadVariableOp:0"
+    output: "StatefulPartitionedCall/StatefulPartitionedCall/dense/StatefulPartitionedCall/MatMul:0"
+    name: "StatefulPartitionedCall/StatefulPartitionedCall/dense/StatefulPartitionedCall/MatMul"
+    op_type: "MatMul"
+  }
+  node {
+    input: "StatefulPartitionedCall/StatefulPartitionedCall/dense/StatefulPartitionedCall/MatMul:0"
+    input: "StatefulPartitionedCall/StatefulPartitionedCall/dense/StatefulPartitionedCall/BiasAdd/ReadVariableOp:0"
+    output: "StatefulPartitionedCall/StatefulPartitionedCall/dense/StatefulPartitionedCall/BiasAdd:0"
+    name: "StatefulPartitionedCall/StatefulPartitionedCall/dense/StatefulPartitionedCall/BiasAdd"
+    op_type: "Add"
+  }
+  node {
+    input: "StatefulPartitionedCall/StatefulPartitionedCall/dense/StatefulPartitionedCall/BiasAdd:0"
+    output: "StatefulPartitionedCall/StatefulPartitionedCall/dense/StatefulPartitionedCall/re_lu/Relu:0"
+    name: "StatefulPartitionedCall/StatefulPartitionedCall/dense/StatefulPartitionedCall/re_lu/Relu"
+    op_type: "Relu"
+  }
+  node {
+    input: "StatefulPartitionedCall/StatefulPartitionedCall/dense/StatefulPartitionedCall/re_lu/Relu:0"
+    input: "StatefulPartitionedCall/StatefulPartitionedCall/dense_1/StatefulPartitionedCall/MatMul/ReadVariableOp:0"
+    output: "StatefulPartitionedCall/StatefulPartitionedCall/dense_1/StatefulPartitionedCall/MatMul:0"
+    name: "StatefulPartitionedCall/StatefulPartitionedCall/dense_1/StatefulPartitionedCall/MatMul"
+    op_type: "MatMul"
+  }
+  node {
+    input: "StatefulPartitionedCall/StatefulPartitionedCall/dense_1/StatefulPartitionedCall/MatMul:0"
+    input: "StatefulPartitionedCall/StatefulPartitionedCall/dense_1/StatefulPartitionedCall/BiasAdd/ReadVariableOp:0"
+    output: "StatefulPartitionedCall/StatefulPartitionedCall/dense_1/StatefulPartitionedCall/BiasAdd:0"
+    name: "StatefulPartitionedCall/StatefulPartitionedCall/dense_1/StatefulPartitionedCall/BiasAdd"
+    op_type: "Add"
+  }
+  node {
+    input: "StatefulPartitionedCall/StatefulPartitionedCall/dense_1/StatefulPartitionedCall/BiasAdd:0"
+    output: "StatefulPartitionedCall/StatefulPartitionedCall/dense_1/StatefulPartitionedCall/re_lu/Relu:0"
+    name: "StatefulPartitionedCall/StatefulPartitionedCall/dense_1/StatefulPartitionedCall/re_lu/Relu"
+    op_type: "Relu"
+  }
+  node {
+    input: "StatefulPartitionedCall/StatefulPartitionedCall/dense_1/StatefulPartitionedCall/re_lu/Relu:0"
+    input: "StatefulPartitionedCall/StatefulPartitionedCall/dense_2/StatefulPartitionedCall/MatMul/ReadVariableOp:0"
+    output: "StatefulPartitionedCall/StatefulPartitionedCall/dense_2/StatefulPartitionedCall/MatMul:0"
+    name: "StatefulPartitionedCall/StatefulPartitionedCall/dense_2/StatefulPartitionedCall/MatMul"
+    op_type: "MatMul"
+  }
+  node {
+    input: "StatefulPartitionedCall/StatefulPartitionedCall/dense_2/StatefulPartitionedCall/MatMul:0"
+    input: "StatefulPartitionedCall/StatefulPartitionedCall/dense_2/StatefulPartitionedCall/BiasAdd/ReadVariableOp:0"
+    output: "StatefulPartitionedCall/StatefulPartitionedCall/dense_2/StatefulPartitionedCall/BiasAdd:0"
+    name: "StatefulPartitionedCall/StatefulPartitionedCall/dense_2/StatefulPartitionedCall/BiasAdd"
+    op_type: "Add"
+  }
+  node {
+    input: "StatefulPartitionedCall/StatefulPartitionedCall/dense_2/StatefulPartitionedCall/BiasAdd:0"
+    output: "StatefulPartitionedCall/StatefulPartitionedCall/dense_2/StatefulPartitionedCall/re_lu/Relu:0"
+    name: "StatefulPartitionedCall/StatefulPartitionedCall/dense_2/StatefulPartitionedCall/re_lu/Relu"
+    op_type: "Relu"
+  }
+  node {
+    input: "StatefulPartitionedCall/StatefulPartitionedCall/dense_2/StatefulPartitionedCall/re_lu/Relu:0"
+    input: "StatefulPartitionedCall/StatefulPartitionedCall/dense_3/StatefulPartitionedCall/MatMul/ReadVariableOp:0"
+    output: "StatefulPartitionedCall/StatefulPartitionedCall/dense_3/StatefulPartitionedCall/MatMul:0"
+    name: "StatefulPartitionedCall/StatefulPartitionedCall/dense_3/StatefulPartitionedCall/MatMul"
+    op_type: "MatMul"
+  }
+  node {
+    input: "StatefulPartitionedCall/StatefulPartitionedCall/dense_3/StatefulPartitionedCall/MatMul:0"
+    input: "StatefulPartitionedCall/StatefulPartitionedCall/dense_3/StatefulPartitionedCall/BiasAdd/ReadVariableOp:0"
+    output: "StatefulPartitionedCall/StatefulPartitionedCall/dense_3/StatefulPartitionedCall/BiasAdd:0"
+    name: "StatefulPartitionedCall/StatefulPartitionedCall/dense_3/StatefulPartitionedCall/BiasAdd"
+    op_type: "Add"
+  }
+  node {
+    input: "StatefulPartitionedCall/StatefulPartitionedCall/dense_3/StatefulPartitionedCall/BiasAdd:0"
+    output: "StatefulPartitionedCall/StatefulPartitionedCall/dense_3/StatefulPartitionedCall/re_lu/Relu:0"
+    name: "StatefulPartitionedCall/StatefulPartitionedCall/dense_3/StatefulPartitionedCall/re_lu/Relu"
+    op_type: "Relu"
+  }
+  node {
+    input: "StatefulPartitionedCall/StatefulPartitionedCall/dense_3/StatefulPartitionedCall/re_lu/Relu:0"
+    input: "StatefulPartitionedCall/StatefulPartitionedCall/dense_4/StatefulPartitionedCall/MatMul/ReadVariableOp:0"
+    output: "StatefulPartitionedCall/StatefulPartitionedCall/dense_4/StatefulPartitionedCall/MatMul:0"
+    name: "StatefulPartitionedCall/StatefulPartitionedCall/dense_4/StatefulPartitionedCall/MatMul"
+    op_type: "MatMul"
+  }
+  node {
+    input: "StatefulPartitionedCall/StatefulPartitionedCall/dense_4/StatefulPartitionedCall/MatMul:0"
+    input: "StatefulPartitionedCall/StatefulPartitionedCall/dense_4/StatefulPartitionedCall/BiasAdd/ReadVariableOp:0"
+    output: "StatefulPartitionedCall/StatefulPartitionedCall/dense_4/StatefulPartitionedCall/BiasAdd:0"
+    name: "StatefulPartitionedCall/StatefulPartitionedCall/dense_4/StatefulPartitionedCall/BiasAdd"
+    op_type: "Add"
+  }
+  node {
+    input: "StatefulPartitionedCall/StatefulPartitionedCall/dense_4/StatefulPartitionedCall/BiasAdd:0"
+    output: "StatefulPartitionedCall/StatefulPartitionedCall/dense_4/StatefulPartitionedCall/re_lu/Relu:0"
+    name: "StatefulPartitionedCall/StatefulPartitionedCall/dense_4/StatefulPartitionedCall/re_lu/Relu"
+    op_type: "Relu"
+  }
+  node {
+    input: "StatefulPartitionedCall/StatefulPartitionedCall/tf_op_layer_split/PartitionedCall/split:0"
+    input: "StatefulPartitionedCall/StatefulPartitionedCall/dense_4/StatefulPartitionedCall/re_lu/Relu:0"
+    output: "StatefulPartitionedCall/StatefulPartitionedCall/tf_op_layer_concat/PartitionedCall/concat:0"
+    name: "StatefulPartitionedCall/StatefulPartitionedCall/tf_op_layer_concat/PartitionedCall/concat"
+    op_type: "Concat"
+    attribute {
+      name: "axis"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "StatefulPartitionedCall/StatefulPartitionedCall/tf_op_layer_concat/PartitionedCall/concat:0"
+    input: "StatefulPartitionedCall/StatefulPartitionedCall/dense_5/StatefulPartitionedCall/MatMul/ReadVariableOp:0"
+    output: "StatefulPartitionedCall/StatefulPartitionedCall/dense_5/StatefulPartitionedCall/MatMul:0"
+    name: "StatefulPartitionedCall/StatefulPartitionedCall/dense_5/StatefulPartitionedCall/MatMul"
+    op_type: "MatMul"
+  }
+  node {
+    input: "StatefulPartitionedCall/StatefulPartitionedCall/dense_5/StatefulPartitionedCall/MatMul:0"
+    input: "StatefulPartitionedCall/StatefulPartitionedCall/dense_5/StatefulPartitionedCall/BiasAdd/ReadVariableOp:0"
+    output: "StatefulPartitionedCall/StatefulPartitionedCall/dense_5/StatefulPartitionedCall/BiasAdd:0"
+    name: "StatefulPartitionedCall/StatefulPartitionedCall/dense_5/StatefulPartitionedCall/BiasAdd"
+    op_type: "Add"
+  }
+  node {
+    input: "StatefulPartitionedCall/StatefulPartitionedCall/dense_5/StatefulPartitionedCall/BiasAdd:0"
+    output: "StatefulPartitionedCall/StatefulPartitionedCall/dense_5/StatefulPartitionedCall/re_lu/Relu:0"
+    name: "StatefulPartitionedCall/StatefulPartitionedCall/dense_5/StatefulPartitionedCall/re_lu/Relu"
+    op_type: "Relu"
+  }
+  node {
+    input: "StatefulPartitionedCall/StatefulPartitionedCall/dense_5/StatefulPartitionedCall/re_lu/Relu:0"
+    input: "StatefulPartitionedCall/StatefulPartitionedCall/dense_6/StatefulPartitionedCall/MatMul/ReadVariableOp:0"
+    output: "StatefulPartitionedCall/StatefulPartitionedCall/dense_6/StatefulPartitionedCall/MatMul:0"
+    name: "StatefulPartitionedCall/StatefulPartitionedCall/dense_6/StatefulPartitionedCall/MatMul"
+    op_type: "MatMul"
+  }
+  node {
+    input: "StatefulPartitionedCall/StatefulPartitionedCall/dense_6/StatefulPartitionedCall/MatMul:0"
+    input: "StatefulPartitionedCall/StatefulPartitionedCall/dense_6/StatefulPartitionedCall/BiasAdd/ReadVariableOp:0"
+    output: "StatefulPartitionedCall/StatefulPartitionedCall/dense_6/StatefulPartitionedCall/BiasAdd:0"
+    name: "StatefulPartitionedCall/StatefulPartitionedCall/dense_6/StatefulPartitionedCall/BiasAdd"
+    op_type: "Add"
+  }
+  node {
+    input: "StatefulPartitionedCall/StatefulPartitionedCall/dense_6/StatefulPartitionedCall/BiasAdd:0"
+    output: "StatefulPartitionedCall/StatefulPartitionedCall/dense_6/StatefulPartitionedCall/re_lu/Relu:0"
+    name: "StatefulPartitionedCall/StatefulPartitionedCall/dense_6/StatefulPartitionedCall/re_lu/Relu"
+    op_type: "Relu"
+  }
+  node {
+    input: "StatefulPartitionedCall/StatefulPartitionedCall/dense_6/StatefulPartitionedCall/re_lu/Relu:0"
+    input: "StatefulPartitionedCall/StatefulPartitionedCall/dense_7/StatefulPartitionedCall/MatMul/ReadVariableOp:0"
+    output: "StatefulPartitionedCall/StatefulPartitionedCall/dense_7/StatefulPartitionedCall/MatMul:0"
+    name: "StatefulPartitionedCall/StatefulPartitionedCall/dense_7/StatefulPartitionedCall/MatMul"
+    op_type: "MatMul"
+  }
+  node {
+    input: "StatefulPartitionedCall/StatefulPartitionedCall/dense_7/StatefulPartitionedCall/MatMul:0"
+    input: "StatefulPartitionedCall/StatefulPartitionedCall/dense_7/StatefulPartitionedCall/BiasAdd/ReadVariableOp:0"
+    output: "StatefulPartitionedCall/StatefulPartitionedCall/dense_7/StatefulPartitionedCall/BiasAdd:0"
+    name: "StatefulPartitionedCall/StatefulPartitionedCall/dense_7/StatefulPartitionedCall/BiasAdd"
+    op_type: "Add"
+  }
+  node {
+    input: "StatefulPartitionedCall/StatefulPartitionedCall/dense_7/StatefulPartitionedCall/BiasAdd:0"
+    output: "StatefulPartitionedCall/StatefulPartitionedCall/dense_7/StatefulPartitionedCall/re_lu/Relu:0"
+    name: "StatefulPartitionedCall/StatefulPartitionedCall/dense_7/StatefulPartitionedCall/re_lu/Relu"
+    op_type: "Relu"
+  }
+  node {
+    input: "StatefulPartitionedCall/StatefulPartitionedCall/dense_7/StatefulPartitionedCall/re_lu/Relu:0"
+    input: "StatefulPartitionedCall/StatefulPartitionedCall/dense_8/StatefulPartitionedCall/MatMul/ReadVariableOp:0"
+    output: "StatefulPartitionedCall/StatefulPartitionedCall/dense_8/StatefulPartitionedCall/MatMul:0"
+    name: "StatefulPartitionedCall/StatefulPartitionedCall/dense_8/StatefulPartitionedCall/MatMul"
+    op_type: "MatMul"
+  }
+  node {
+    input: "StatefulPartitionedCall/StatefulPartitionedCall/dense_7/StatefulPartitionedCall/re_lu/Relu:0"
+    input: "StatefulPartitionedCall/StatefulPartitionedCall/dense_9/StatefulPartitionedCall/MatMul/ReadVariableOp:0"
+    output: "StatefulPartitionedCall/StatefulPartitionedCall/dense_9/StatefulPartitionedCall/MatMul:0"
+    name: "StatefulPartitionedCall/StatefulPartitionedCall/dense_9/StatefulPartitionedCall/MatMul"
+    op_type: "MatMul"
+  }
+  node {
+    input: "StatefulPartitionedCall/StatefulPartitionedCall/dense_8/StatefulPartitionedCall/MatMul:0"
+    input: "StatefulPartitionedCall/StatefulPartitionedCall/dense_8/StatefulPartitionedCall/BiasAdd/ReadVariableOp:0"
+    output: "StatefulPartitionedCall/StatefulPartitionedCall/dense_8/StatefulPartitionedCall/BiasAdd:0"
+    name: "StatefulPartitionedCall/StatefulPartitionedCall/dense_8/StatefulPartitionedCall/BiasAdd"
+    op_type: "Add"
+  }
+  node {
+    input: "StatefulPartitionedCall/StatefulPartitionedCall/dense_9/StatefulPartitionedCall/MatMul:0"
+    input: "StatefulPartitionedCall/StatefulPartitionedCall/dense_9/StatefulPartitionedCall/BiasAdd/ReadVariableOp:0"
+    output: "StatefulPartitionedCall/StatefulPartitionedCall/dense_9/StatefulPartitionedCall/BiasAdd:0"
+    name: "StatefulPartitionedCall/StatefulPartitionedCall/dense_9/StatefulPartitionedCall/BiasAdd"
+    op_type: "Add"
+  }
+  node {
+    input: "StatefulPartitionedCall/StatefulPartitionedCall/dense_9/StatefulPartitionedCall/BiasAdd:0"
+    input: "StatefulPartitionedCall/StatefulPartitionedCall/tf_op_layer_split/PartitionedCall/split:1"
+    output: "StatefulPartitionedCall/StatefulPartitionedCall/tf_op_layer_concat_1/PartitionedCall/concat_1:0"
+    name: "StatefulPartitionedCall/StatefulPartitionedCall/tf_op_layer_concat_1/PartitionedCall/concat_1"
+    op_type: "Concat"
+    attribute {
+      name: "axis"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "StatefulPartitionedCall/StatefulPartitionedCall/tf_op_layer_concat_1/PartitionedCall/concat_1:0"
+    input: "StatefulPartitionedCall/StatefulPartitionedCall/dense_10/StatefulPartitionedCall/MatMul/ReadVariableOp:0"
+    output: "StatefulPartitionedCall/StatefulPartitionedCall/dense_10/StatefulPartitionedCall/MatMul:0"
+    name: "StatefulPartitionedCall/StatefulPartitionedCall/dense_10/StatefulPartitionedCall/MatMul"
+    op_type: "MatMul"
+  }
+  node {
+    input: "StatefulPartitionedCall/StatefulPartitionedCall/dense_10/StatefulPartitionedCall/MatMul:0"
+    input: "StatefulPartitionedCall/StatefulPartitionedCall/dense_10/StatefulPartitionedCall/BiasAdd/ReadVariableOp:0"
+    output: "StatefulPartitionedCall/StatefulPartitionedCall/dense_10/StatefulPartitionedCall/BiasAdd:0"
+    name: "StatefulPartitionedCall/StatefulPartitionedCall/dense_10/StatefulPartitionedCall/BiasAdd"
+    op_type: "Add"
+  }
+  node {
+    input: "StatefulPartitionedCall/StatefulPartitionedCall/dense_10/StatefulPartitionedCall/BiasAdd:0"
+    output: "StatefulPartitionedCall/StatefulPartitionedCall/dense_10/StatefulPartitionedCall/re_lu/Relu:0"
+    name: "StatefulPartitionedCall/StatefulPartitionedCall/dense_10/StatefulPartitionedCall/re_lu/Relu"
+    op_type: "Relu"
+  }
+  node {
+    input: "StatefulPartitionedCall/StatefulPartitionedCall/dense_10/StatefulPartitionedCall/re_lu/Relu:0"
+    input: "StatefulPartitionedCall/StatefulPartitionedCall/dense_11/StatefulPartitionedCall/MatMul/ReadVariableOp:0"
+    output: "StatefulPartitionedCall/StatefulPartitionedCall/dense_11/StatefulPartitionedCall/MatMul:0"
+    name: "StatefulPartitionedCall/StatefulPartitionedCall/dense_11/StatefulPartitionedCall/MatMul"
+    op_type: "MatMul"
+  }
+  node {
+    input: "StatefulPartitionedCall/StatefulPartitionedCall/dense_11/StatefulPartitionedCall/MatMul:0"
+    input: "StatefulPartitionedCall/StatefulPartitionedCall/dense_11/StatefulPartitionedCall/BiasAdd/ReadVariableOp:0"
+    output: "StatefulPartitionedCall/StatefulPartitionedCall/dense_11/StatefulPartitionedCall/BiasAdd:0"
+    name: "StatefulPartitionedCall/StatefulPartitionedCall/dense_11/StatefulPartitionedCall/BiasAdd"
+    op_type: "Add"
+  }
+  node {
+    input: "StatefulPartitionedCall/StatefulPartitionedCall/dense_11/StatefulPartitionedCall/BiasAdd:0"
+    input: "StatefulPartitionedCall/StatefulPartitionedCall/dense_8/StatefulPartitionedCall/BiasAdd:0"
+    output: "Identity:0"
+    name: "StatefulPartitionedCall/StatefulPartitionedCall/tf_op_layer_concat_2/PartitionedCall/concat_2"
+    op_type: "Concat"
+    attribute {
+      name: "axis"
+      i: 1
+      type: INT
+    }
+  }
+  initializer {
+      dims: 2
+      data_type: 7
+      name: "split__6"
+  }
+  initializer {
+      dims: 256
+      dims: 256
+      data_type: 1
+      name: "StatefulPartitionedCall/StatefulPartitionedCall/dense_9/StatefulPartitionedCall/MatMul/ReadVariableOp:0"
+  }
+  initializer {
+      dims: 256
+      data_type: 1
+      name: "StatefulPartitionedCall/StatefulPartitionedCall/dense_9/StatefulPartitionedCall/BiasAdd/ReadVariableOp:0"
+  }
+  initializer {
+      dims: 256
+      dims: 1
+      data_type: 1
+      name: "StatefulPartitionedCall/StatefulPartitionedCall/dense_8/StatefulPartitionedCall/MatMul/ReadVariableOp:0"
+  }
+  initializer {
+      dims: 1
+      data_type: 1
+      name: "StatefulPartitionedCall/StatefulPartitionedCall/dense_8/StatefulPartitionedCall/BiasAdd/ReadVariableOp:0"
+  }
+  initializer {
+      dims: 256
+      dims: 256
+      data_type: 1
+      name: "StatefulPartitionedCall/StatefulPartitionedCall/dense_7/StatefulPartitionedCall/MatMul/ReadVariableOp:0"
+  }
+  initializer {
+      dims: 256
+      data_type: 1
+      name: "StatefulPartitionedCall/StatefulPartitionedCall/dense_7/StatefulPartitionedCall/BiasAdd/ReadVariableOp:0"
+  }
+  initializer {
+      dims: 256
+      dims: 256
+      data_type: 1
+      name: "StatefulPartitionedCall/StatefulPartitionedCall/dense_6/StatefulPartitionedCall/MatMul/ReadVariableOp:0"
+  }
+  initializer {
+      dims: 256
+      data_type: 1
+      name: "StatefulPartitionedCall/StatefulPartitionedCall/dense_6/StatefulPartitionedCall/BiasAdd/ReadVariableOp:0"
+  }
+  initializer {
+      dims: 319
+      dims: 256
+      data_type: 1
+      name: "StatefulPartitionedCall/StatefulPartitionedCall/dense_5/StatefulPartitionedCall/MatMul/ReadVariableOp:0"
+  }
+  initializer {
+      dims: 256
+      data_type: 1
+      name: "StatefulPartitionedCall/StatefulPartitionedCall/dense_5/StatefulPartitionedCall/BiasAdd/ReadVariableOp:0"
+  }
+  initializer {
+      dims: 256
+      dims: 256
+      data_type: 1
+      name: "StatefulPartitionedCall/StatefulPartitionedCall/dense_4/StatefulPartitionedCall/MatMul/ReadVariableOp:0"
+  }
+  initializer {
+      dims: 256
+      data_type: 1
+      name: "StatefulPartitionedCall/StatefulPartitionedCall/dense_4/StatefulPartitionedCall/BiasAdd/ReadVariableOp:0"
+  }
+  initializer {
+      dims: 256
+      dims: 256
+      data_type: 1
+      name: "StatefulPartitionedCall/StatefulPartitionedCall/dense_3/StatefulPartitionedCall/MatMul/ReadVariableOp:0"
+  }
+  initializer {
+      dims: 256
+      data_type: 1
+      name: "StatefulPartitionedCall/StatefulPartitionedCall/dense_3/StatefulPartitionedCall/BiasAdd/ReadVariableOp:0"
+  }
+  initializer {
+      dims: 256
+      dims: 256
+      data_type: 1
+      name: "StatefulPartitionedCall/StatefulPartitionedCall/dense_2/StatefulPartitionedCall/MatMul/ReadVariableOp:0"
+  }
+  initializer {
+      dims: 256
+      data_type: 1
+      name: "StatefulPartitionedCall/StatefulPartitionedCall/dense_2/StatefulPartitionedCall/BiasAdd/ReadVariableOp:0"
+  }
+  initializer {
+      dims: 128
+      dims: 3
+      data_type: 1
+      name: "StatefulPartitionedCall/StatefulPartitionedCall/dense_11/StatefulPartitionedCall/MatMul/ReadVariableOp:0"
+  }
+  initializer {
+      dims: 3
+      data_type: 1
+      name: "StatefulPartitionedCall/StatefulPartitionedCall/dense_11/StatefulPartitionedCall/BiasAdd/ReadVariableOp:0"
+  }
+  initializer {
+      dims: 283
+      dims: 128
+      data_type: 1
+      name: "StatefulPartitionedCall/StatefulPartitionedCall/dense_10/StatefulPartitionedCall/MatMul/ReadVariableOp:0"
+  }
+  initializer {
+      dims: 128
+      data_type: 1
+      name: "StatefulPartitionedCall/StatefulPartitionedCall/dense_10/StatefulPartitionedCall/BiasAdd/ReadVariableOp:0"
+  }
+  initializer {
+      dims: 256
+      dims: 256
+      data_type: 1
+      name: "StatefulPartitionedCall/StatefulPartitionedCall/dense_1/StatefulPartitionedCall/MatMul/ReadVariableOp:0"
+  }
+  initializer {
+      dims: 256
+      data_type: 1
+      name: "StatefulPartitionedCall/StatefulPartitionedCall/dense_1/StatefulPartitionedCall/BiasAdd/ReadVariableOp:0"
+  }
+  initializer {
+      dims: 63
+      dims: 256
+      data_type: 1
+      name: "StatefulPartitionedCall/StatefulPartitionedCall/dense/StatefulPartitionedCall/MatMul/ReadVariableOp:0"
+  }
+  initializer {
+      dims: 256
+      data_type: 1
+      name: "StatefulPartitionedCall/StatefulPartitionedCall/dense/StatefulPartitionedCall/BiasAdd/ReadVariableOp:0"
+  }
+  input {
+    name: "input_1"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_param: "unk__7"
+          }
+          dim {
+            dim_value: 90
+          }
+        }
+      }
+    }
+  }
+  output {
+    name: "Identity:0"
+    type {
+      tensor_type {
+        elem_type: 1
+        shape {
+          dim {
+            dim_param: "unk__8"
+          }
+          dim {
+            dim_value: 4
+          }
+        }
+      }
+    }
+  }
+}
+opset_import {
+  version: 13
+}

@@ -1,11 +1,12 @@
 # NeRF: Neural Radiance Fields
 
-Celem dzisiejszych zajęć jest poznawanie modelu NeRF oraz zrozumienie jego działania. Oprócz tego zaprezentowane zostaną techniki pozwalające na przyspieszenie działania modelu oraz zwiększenie jego jakości. Cała część teoretyczna znajduję się w notebooku [NeRF.ipynb](NeRF.ipynb). Zadania praktyczne znajdują się w notebooku [exercises.ipynb](exercises.ipynb).
+Celem dzisiejszych zajęć jest poznawanie modelu NeRF oraz zrozumienie jego działania. Oprócz tego zaprezentowane zostaną techniki pozwalające na przyspieszenie działania modelu oraz zwiększenie jego jakości. Cała część teoretyczna znajduję się w notebooku [NeRF.ipynb](NeRF.ipynb) i [fourier_feature_example.ipynb](fourier_feature_example.ipynb). Zadania praktyczne znajdują się w notebooku [exercises.ipynb](exercises.ipynb).
 
 Repozytorium zawiera pliki:
 - NeRF.ipynb -- zawiera on część teoretyczną wyjaśniającą jak działa NeRF oraz Furier Feature
-- fourier_feature_example.ipynb -- przerobiony notebook z publikacji [1] który pokaże użyteczność Furier Feature
+- fourier_feature_example.ipynb -- w celu pokazania jak działa Furier Feature
 - exercises.py -- plik z praktycznymi zadaniami do zrobienia
+- nerf_eval -- folder z kodem do uruchomienia NeRF wzięty z repozytorium [ailia-models [6]](https://github.com/axinc-ai/ailia-models/tree/master/neural_rendering/nerf)
 - requirements.txt -- zestaw potrzebnych bibliotek do uruchomienia kodu.
 - elza -- zbiór zdjęć elzy potrzebny do notebooka exercises
 - src -- zbiór materiałów audiowizualnych do notebooka NeRF
@@ -31,6 +32,28 @@ $ source .venv/bin/activate
 $ pip install -r requirements.txt
 ```
 
+## Uruchomienie NeRF
+Kod został wzięty z repozytorium [ailia-models [6]](https://github.com/axinc-ai/ailia-models/tree/master/neural_rendering/nerf) i został lekko przerobiony na potrzeby tych ćwiczeń. W celu uruchomienia NeRF należy wejść do folderu `nerf_eval` i uruchomić skrypt `nerf.py`. Model uruchamiany jest za pomocą ONNX Runtime.
+
+Dla przykładowego obrazu,
+``` bash
+python3 nerf.py 
+```
+
+Kąt renderowania można ustawić za pomocą `--angle`. Zakres wynosi od 0 do 119.
+
+``` bash
+python3 nerf.py --angle 100
+```
+
+Współczynnik downsamplingu przyspieszający renderowanie, ustaw 4 lub 8 dla szybkiego podglądu. Domyślnie jest to 4.
+
+``` bash
+python3 nerf.py --render_factor 8
+```
+
+Architekturę modelu można podejrzeć na Netronie pod tym linkiem: https://netron.app/?url=https://storage.googleapis.com/ailia-models/nerf/nerf.opt.onnx.prototxt
+
 
 ## Źródła:
 
@@ -41,3 +64,4 @@ Repozytorium zostało stworzone na podstawie:<br/>
 [3] https://towardsdatascience.com/nerf-representing-scenes-as-neural-radiance-fields-for-view-synthesis-ef1e8cebace4 (20.12.2023) <br/>
 [4] https://bmild.github.io/fourfeat/ (20.12.2023) <br/>
 [5] https://arxiv.org/pdf/2003.08934.pdf (20.12.2023) <br/>
+[6] https://github.com/axinc-ai/ailia-models/tree/master/neural_rendering/nerf
