@@ -3,12 +3,12 @@
 Celem dzisiejszych zajęć jest poznawanie modelu NeRF oraz zrozumienie jego działania. Oprócz tego zaprezentowane zostaną techniki pozwalające na przyspieszenie działania modelu oraz zwiększenie jego jakości. Cała część teoretyczna znajduję się w notebooku [NeRF.ipynb](NeRF.ipynb). Zadania praktyczne znajdują się w notebooku [exercises.ipynb](exercises.ipynb).
 
 Repozytorium zawiera pliki:
-- plik1.ipynb -- opis modelu XYZ, dwa zadania dotyczące... (jakie/na jakich zbiorach)...
-- plik2.ipynb -- opis modelu MNZ, jedno zadanie dotyczące... (jakie/na jakich zbiorach)...
-- plik_pomocniczy.py -- funkcje pomocnocze, 
+- NeRF.ipynb -- zawiera on część teoretyczną wyjaśniającą jak działa NeRF oraz Furier Feature
+- fourier_feature_example.ipynb -- przerobiony notebook z publikacji [1] który pokaże użyteczność Furier Feature
+- exercises.py -- plik z praktycznymi zadaniami do zrobienia
 - requirements.txt -- zestaw potrzebnych bibliotek do uruchomienia kodu.
-
-Jeśli `miniprojekt` wymaga dodatkowych plików/repozytrów, które nie są zawarte w repozytorium należy je wyraźnie wyróżnić. Proszę w takim wypadku odpowiednio oznaczyć używany kod (poprzez zrobienie forka i umieszenie linku do niego; linku do odpiweniego commitu/wersji, wraz z datą). 
+- elza -- zbiór zdjęć elzy potrzebny do notebooka exercises
+- src -- zbiór materiałów audiowizualnych do notebooka NeRF
 
 ## Konfiguracja środowiska
 
@@ -20,11 +20,11 @@ W trakcie tych ćwiczeń będziemy korzystać z notatników Jupyter Notebook. Ab
 
 Stwórz środowisko za pomocą `venv`:
 ```bash
-$ python3.9 -m venv .venv
+$ python3.11 -m venv .venv
 ```
 lub z użyciem `conda`:
 ```bash
-$ conda create -n .venv python=3.9.9
+$ conda create -n .venv python=3.11.5
 ```
 
 zainstaluj niezbędne biblioteki:
@@ -33,18 +33,13 @@ $ source .venv/bin/activate
 $ pip install -r requirements.txt
 ```
 
-## Informacje dodatkowe
-
-Należy zapozać się z ....
 
 ## Źródła:
 
 Repozytorium zostało stworzone na podstawie:<br/> 
-[1] ...<br/>
-[2] ...<br/>
 
-Warto zwrócić uwagę na:<br/>
-[3] ...<br/>
-[4] ...<br/>
-
-Jeśli używane są linki do stron interentowych proszę o dodanie w nawiasie daty dostepu. 
+[1] https://www.matthewtancik.com/nerf (20.12.2023) <br/>
+[2] https://dl.acm.org/doi/pdf/10.1145/3503250 (20.12.2023) <br/>
+[3] https://towardsdatascience.com/nerf-representing-scenes-as-neural-radiance-fields-for-view-synthesis-ef1e8cebace4 (20.12.2023) <br/>
+[4] https://bmild.github.io/fourfeat/ (20.12.2023) <br/>
+[5] https://arxiv.org/pdf/2003.08934.pdf (20.12.2023) <br/>
