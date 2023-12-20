@@ -1,13 +1,11 @@
-import sys
 import numpy as np
-import imageio
-import cv2
+import onnxruntime
+import PIL.Image
 
 import utils_nerf
 from load_llff import load_llff_data
 
 from arg_utils import get_base_parser, update_parser
-from model_utils import check_and_download_models
 
 
 # logger
@@ -26,9 +24,8 @@ W = 1008.0
 C = 3
 focal = 815.1316
 
-WEIGHT_PATH = "nerf.opt.onnx"
-MODEL_PATH = "nerf.opt.onnx.prototxt"
-REMOTE_PATH = "https://storage.googleapis.com/ailia-models/nerf/"
+WEIGHT_PATH = "data/models/nerf.opt.onnx"
+MODEL_PATH = "data/models/nerf.opt.onnx.prototxt"
 
 # ======================
 # Arguemnt Parser Config
@@ -41,7 +38,6 @@ parser = get_base_parser(
 
 # ailia options
 parser.add_argument('-a', '--angle', default=0, type=int, help='Rendering angle (0 - 120)')
-parser.add_argument('--onnx', action='store_true', help='execute onnxruntime version.')
 
 # angle options
 parser.add_argument("--datadir", type=str,
@@ -104,9 +100,7 @@ args = update_parser(parser)
 # ======================
 def main():
     # net initialize
-    if args.onnx:
-        import onnxruntime
-        net = onnxruntime.InferenceSession(WEIGHT_PATH)
+    net = onnxruntime.InferenceSession(WEIGHT_PATH)
 
     # load angles
     render_poses = load_llff_data(args.datadir, args.factor,
@@ -142,15 +136,13 @@ def main():
         frame = (255 * np.clip(test[0], 0, 1)).astype(np.uint8)
         frames.append(frame)
 
-        frame = cv2.cvtColor(frame, cv2.COLOR_RGB2BGR)
+        frame = PIL.Image.fromarray(frame)
         logger.info(f'saved at : {args.savepath}')
-        cv2.imwrite(args.savepath,frame)
+        frame.save(args.savepath)
 
     # finish
     logger.info('Script finished successfully.')
 
 
 if __name__=='__main__':
-    # model files check and download
-    check_and_download_models(WEIGHT_PATH, MODEL_PATH, REMOTE_PATH)
     main()

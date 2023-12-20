@@ -37,19 +37,19 @@ Kod został wzięty z repozytorium [ailia-models [6]](https://github.com/axinc-a
 
 Dla przykładowego obrazu,
 ``` bash
-python3 nerf.py 
+python nerf.py 
 ```
 
 Kąt renderowania można ustawić za pomocą `--angle`. Zakres wynosi od 0 do 119.
 
 ``` bash
-python3 nerf.py --angle 100
+python nerf.py --angle 100
 ```
 
 Współczynnik downsamplingu przyspieszający renderowanie, ustaw 4 lub 8 dla szybkiego podglądu. Domyślnie jest to 4.
 
 ``` bash
-python3 nerf.py --render_factor 8
+python nerf.py --render_factor 8
 ```
 
 Architekturę modelu można podejrzeć na Netronie pod tym linkiem: https://netron.app/?url=https://storage.googleapis.com/ailia-models/nerf/nerf.opt.onnx.prototxt
