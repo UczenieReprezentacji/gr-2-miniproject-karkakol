@@ -65,3 +65,4 @@ Repozytorium zostało stworzone na podstawie:<br/>
 [4] https://bmild.github.io/fourfeat/ (20.12.2023) <br/>
 [5] https://arxiv.org/pdf/2003.08934.pdf (20.12.2023) <br/>
 [6] https://github.com/axinc-ai/ailia-models/tree/master/neural_rendering/nerf
+[7] https://github.com/ndahlquist/pytorch-fourier-feature-networks/blob/master/demo.ipynb
