@@ -12,11 +12,9 @@ Repozytorium zawiera pliki:
 
 ## Konfiguracja środowiska
 
-Proszę o szczegółowy opis, jak powinno zostać skonfigurowane środowisko. Dla chętnych - można używać Dockera (nie jest to wymagane). Kod musi być reproduktywny. Należy zaznaczyć jaka wersja Pythona jest używana. Wszystkie wymagane paczki muszą mieć zaznaczoną wersję.
-
-Przykład:
-
 W trakcie tych ćwiczeń będziemy korzystać z notatników Jupyter Notebook. Aby przygotować środowisko, należy zainstalować niezbędne biblioteki z pliku `requirements.txt`. Zaleca się przygotowanie wcześniej wirtualnego środowiska:
+
+Propozycja jak można to zainstalować:
 
 Stwórz środowisko za pomocą `venv`:
 ```bash
