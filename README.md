@@ -2,6 +2,11 @@
 
 Celem dzisiejszych zajęć jest poznawanie modelu NeRF oraz zrozumienie jego działania. Oprócz tego zaprezentowane zostaną techniki pozwalające na przyspieszenie działania modelu oraz zwiększenie jego jakości. Cała część teoretyczna znajduję się w notebooku [NeRF.ipynb](NeRF.ipynb) i [fourier_feature_example.ipynb](fourier_feature_example.ipynb). Zadania praktyczne znajdują się w notebooku [exercises.ipynb](exercises.ipynb).
 
+Aby skorzystać w pełni z tych zajęć polecamy iść według poniższej ścieżki:
+1. Przeczytaj notebook [NeRF.ipynb](NeRF.ipynb), a następnie [fourier_feature_example.ipynb](fourier_feature_example.ipynb)
+2. Wykonaj zadania z notebooka [exercises.ipynb](exercises.ipynb)
+3. Uruchom NeRF na swoim komputerze
+
 Repozytorium zawiera pliki:
 - NeRF.ipynb -- zawiera on część teoretyczną wyjaśniającą jak działa NeRF oraz Furier Feature
 - fourier_feature_example.ipynb -- plik pokazujący jak Furier Feature poprawia działanie sieci
